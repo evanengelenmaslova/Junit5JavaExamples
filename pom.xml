@@ -16,9 +16,15 @@
         <caffeine.version>2.7.0</caffeine.version>
         <spring.version>5.2.7.RELEASE</spring.version>
         <guava.version>28.2-jre</guava.version>
+        <apache.commons.version>3.7</apache.commons.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apache.commons.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
