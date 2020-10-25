@@ -16,8 +16,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static nl.vintik.example.java.junit5.AbTestFilter.ABTEST_COOKIE_NAME;
-import static nl.vintik.example.java.junit5.AbTestFilter.ABTEST_REQUEST_PARAM_NAME;
+import static nl.vintik.example.java.junit5.AbTestFilter.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -39,7 +38,7 @@ public class AbTestFilterTest {
     @BeforeEach
     public void setUp() {
         when(mockDeviceService.getDeviceTypeByUserAgent(any())).thenReturn(DeviceType.DESKTOP);
-        when(mockToggleService.isEnabled((Toggle) any())).thenReturn(false);
+        when(mockToggleService.isEnabled(any())).thenReturn(false);
         abTestFilter.init(mockAbTestsContext, mockDeviceService, mockToggleService);
     }
 
@@ -54,7 +53,7 @@ public class AbTestFilterTest {
         abTestFilter.doFilter(request, response, mockFilterChain);
 
         assertArrayEquals(variantIds,
-                Arrays.stream(response.getCookie(ABTEST_COOKIE_NAME).getValue().split("#")).sorted().toArray());
+                Arrays.stream(response.getCookie(ABTEST_COOKIE_NAME).getValue().split(SEPARATOR)).sorted().toArray());
     }
 
     @Test
@@ -71,7 +70,7 @@ public class AbTestFilterTest {
 
         verify(mockAbTestsContext).setActiveVariantsForUser(activeVariantsMap);
         assertArrayEquals(expectedVariantIds,
-                Arrays.stream(response.getCookie(ABTEST_COOKIE_NAME).getValue().split("#")).sorted().toArray());
+                Arrays.stream(response.getCookie(ABTEST_COOKIE_NAME).getValue().split(SEPARATOR)).sorted().toArray());
     }
 
     @Test

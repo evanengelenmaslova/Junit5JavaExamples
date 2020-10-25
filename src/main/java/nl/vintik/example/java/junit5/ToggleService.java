@@ -4,5 +4,4 @@ public interface ToggleService {
 
     boolean isEnabled(Toggle toggle);
 
-    boolean isEnabled(String featureName);
 }

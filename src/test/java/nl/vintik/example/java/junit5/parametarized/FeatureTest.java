@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class FeatureTest {
 
     public static Stream<Arguments> data() {
-        return Arrays.stream(Feature.values()).map(Arguments::of); // this test explicitly doesnt test operation switches as they have names that are too long
+        return Arrays.stream(Feature.values()).map(Arguments::of);
     }
 
     @ParameterizedTest

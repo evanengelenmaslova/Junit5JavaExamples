@@ -24,10 +24,11 @@ public class AbTestFilter implements Filter {
 
     static final String ABTEST_COOKIE_NAME = "abtest_cookie";
     static final String ABTEST_REQUEST_PARAM_NAME = "abtest";
+    static final String SEPARATOR = "~";
+
     private static final String USER_AGENT_HEADER_KEY = "User-Agent";
 
     private static final int HOUR_IN_SECONDS = 3600;
-    private static final String SEPARATOR = "#";
 
     private AbTestsContext abTestsContext;
     private DeviceService deviceService;
@@ -98,7 +99,7 @@ public class AbTestFilter implements Filter {
     private boolean isUserAgentBot(HttpServletRequest request) {
         if (request != null) {
             String userAgent = request.getHeader(USER_AGENT_HEADER_KEY);
-            return deviceService.getDeviceTypeByUserAgent(userAgent).isSeoAgent();
+            return deviceService.getDeviceTypeByUserAgent(userAgent).isSeo();
         }
         return false;
     }
@@ -135,9 +136,10 @@ public class AbTestFilter implements Filter {
         Cookie newAbtCookie = new Cookie(ABTEST_COOKIE_NAME,
                 StringUtils.defaultIfBlank(value, "true"));
 
+        newAbtCookie.setSecure(httpServletRequest.isSecure());
         newAbtCookie.setPath("/");
         newAbtCookie.setMaxAge(HOUR_IN_SECONDS);
-        newAbtCookie.setSecure(httpServletRequest.isSecure());
+
         httpServletResponse.addCookie(newAbtCookie);
     }
 
