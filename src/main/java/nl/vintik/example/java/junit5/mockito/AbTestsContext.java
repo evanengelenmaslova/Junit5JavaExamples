@@ -1,4 +1,4 @@
-package nl.vintik.example.java.junit5;
+package nl.vintik.example.java.junit5.mockito;
 
 import java.util.List;
 import java.util.Map;

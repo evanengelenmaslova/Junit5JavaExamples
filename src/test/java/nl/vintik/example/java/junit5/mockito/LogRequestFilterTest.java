@@ -1,6 +1,8 @@
-package nl.vintik.example.java.junit5;
+package nl.vintik.example.java.junit5.mockito;
 
 import com.google.common.net.HttpHeaders;
+import nl.vintik.example.java.junit5.mockito.LogRequestFilter;
+import nl.vintik.example.java.junit5.mockito.SessionIdContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 import java.util.UUID;
 
-import static nl.vintik.example.java.junit5.LogRequestFilter.MDC;
+import static nl.vintik.example.java.junit5.mockito.LogRequestFilter.MDC;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;

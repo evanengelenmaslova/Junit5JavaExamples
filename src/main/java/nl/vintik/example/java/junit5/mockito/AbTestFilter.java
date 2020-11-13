@@ -1,4 +1,4 @@
-package nl.vintik.example.java.junit5;
+package nl.vintik.example.java.junit5.mockito;
 
 import nl.vintik.example.java.junit5.parametarized.Feature;
 import org.apache.commons.lang3.StringUtils;

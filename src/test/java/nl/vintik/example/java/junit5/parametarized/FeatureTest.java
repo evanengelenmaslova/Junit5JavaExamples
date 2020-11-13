@@ -1,6 +1,6 @@
 package nl.vintik.example.java.junit5.parametarized;
 
-import nl.vintik.example.java.junit5.Toggle;
+import nl.vintik.example.java.junit5.mockito.Toggle;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

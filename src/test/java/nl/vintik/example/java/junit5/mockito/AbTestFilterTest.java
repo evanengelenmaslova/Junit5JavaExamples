@@ -1,5 +1,7 @@
-package nl.vintik.example.java.junit5;
+package nl.vintik.example.java.junit5.mockito;
 
+import nl.vintik.example.java.junit5.DeviceType;
+import nl.vintik.example.java.junit5.mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +18,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static nl.vintik.example.java.junit5.AbTestFilter.*;
+import static nl.vintik.example.java.junit5.mockito.AbTestFilter.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
