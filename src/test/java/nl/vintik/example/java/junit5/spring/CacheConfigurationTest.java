@@ -33,7 +33,7 @@ public class CacheConfigurationTest {
     @Test
     @DisplayName("Should override configuration, tested with 50K and 200")
     public void shouldOverrideCacheConfiguration() {
-        assertEquals(50_000, CacheConfiguration.size("maxElementsInMemory|50000", 200));
+        assertEquals(50_000, CacheConfiguration.size("maxElementsInMemory|50000", 200), "expected 50000");
         assertEquals(200, CacheConfiguration.size("maxElementsInMemories|50000", 200));
     }
 
