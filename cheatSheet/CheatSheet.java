@@ -60,13 +60,13 @@ class Junit5CheatSheet {
         return testCases.stream();
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "#{index} - should add {0} to 5 and get {1}")
     @MethodSource("dataSource")
     void shouldAddTo5(int input, int expected) {
-        assertEquals(expected, addTo5(input), () -> String.format("should %d to 5 and get %d"));
+        assertEquals(expected, addTo5(input));
     }
 
-    @ParameterizedTest
+    @ParameterizedTest(name = "#{index} - value of {0} should be between 1 and 12")
     @EnumSource(Month.class)
     void getValueForAMonth_IsAlwaysBetweenOneAndTwelve(Month month) {
         int monthNumber = month.getValue();
