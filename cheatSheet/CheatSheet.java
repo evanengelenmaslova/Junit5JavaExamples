@@ -7,6 +7,32 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class Junit5CheatSheet {
 
+    //Set up & tear down
+
+    //was @BeforeClass
+    @BeforeAll
+    static void beforeAll(){
+        //run before all tests
+    }
+
+    //was @Before
+    @BeforeEach
+    void setUp(){
+        //run before each test
+    }
+
+    //was @Before
+    @AfterEach
+    void tearDown(){
+        //run after each test
+    }
+
+    //was @AfterClass
+    @AfterAll
+    static void afterAll(){
+        //run after all tests
+    }
+
     //Exceptions
 
     @Test// was @Test(expected = IllegalArgumentException.class)
