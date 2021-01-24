@@ -1,8 +1,6 @@
 package nl.vintik.example.java.junit5.mockito;
 
 import com.google.common.net.HttpHeaders;
-import nl.vintik.example.java.junit5.mockito.LogRequestFilter;
-import nl.vintik.example.java.junit5.mockito.SessionIdContext;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

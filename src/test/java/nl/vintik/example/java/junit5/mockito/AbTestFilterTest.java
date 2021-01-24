@@ -1,7 +1,6 @@
 package nl.vintik.example.java.junit5.mockito;
 
 import nl.vintik.example.java.junit5.DeviceType;
-import nl.vintik.example.java.junit5.mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

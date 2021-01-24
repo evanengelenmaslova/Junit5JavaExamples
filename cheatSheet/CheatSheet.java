@@ -10,14 +10,14 @@ class Junit5CheatSheet {
     //Exceptions
 
     @Test// was @Test(expected = IllegalArgumentException.class)
-    public void shouldRaiseAnException() throws Exception {
+    void shouldRaiseAnException() throws Exception {
         assertThrows(IllegalArgumentException.class, () -> {
             throw new IllegalArgumentException("a message");
         });
     }
 
     @Test// was @Test(expected = IllegalArgumentException.class, message = "a message")
-    public void shouldRaiseAnException() throws Exception {
+    void shouldRaiseAnExceptionwthMessage() throws Exception {
         Throwable exception =  assertThrows(IllegalArgumentException.class, () -> {
             throw new IllegalArgumentException("a message");
         });
